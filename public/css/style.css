@@ -10,6 +10,7 @@ body {
     font-family: 'Public Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
+    color: hsl(233, 8%, 62%);
 }
 
 .header {
@@ -30,7 +31,7 @@ body {
     color: hsl(233, 8%, 62%);
     font-size: 0.85rem;
     padding-top: 25px;
-    padding-bottom: 21px;
+    padding-bottom: 25px;
     background: #fff;
 }
 
@@ -52,3 +53,50 @@ body {
     color: #fff;
     background: linear-gradient(239deg, rgba(43, 183, 218, 0.8) 0%, rgba(49, 211, 92, 0.8) 96%);
 }
+
+.banner {
+    overflow: hidden;
+    position: relative;
+}
+
+.banner::before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/bg-intro-desktop.svg);
+    width: 744px;
+    height: 913px;
+    right: -100px;
+    top: -185px;
+}
+
+.banner-wrapper {
+    position: relative;
+}
+
+.banner-wrapper::before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/image-mockups.png);
+    width: 744px;
+    height: 913px;
+    right: -100px;
+    top: 0;
+    z-index: 10;
+}
+
+.banner-content {
+    max-width: 450px;
+    padding: 247px 0;
+}
+
+.banner-content__title {
+    font-size: 3.3rem;
+    padding-bottom: 15px;
+    color: #3a3958;
+}
+
+.banner-content__text {
+    margin-bottom: 37px;
+}
+
+.banner-content__link {}
