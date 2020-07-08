@@ -99,4 +99,46 @@ body {
     margin-bottom: 37px;
 }
 
-.banner-content__link {}
+.about {
+    padding: 110px 0;
+    background-color: #f4f5f7;
+}
+
+.about-top {
+    max-width: 645px;
+}
+
+.about-top__title {
+    color: #3a3958;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.about-top__text {
+    margin-bottom: 70px;
+}
+
+.about-bottom {}
+
+.row {}
+
+.about-item {}
+
+.about-item__icon {
+    margin-bottom: 40px;
+}
+
+.about-item__title {
+    font-size: 1.5rem;
+    color: #3a3958;
+    margin-bottom: 20px;
+}
+
+.about-item__text {
+    font-size: 1rem;
+    line-height: 1.7rem;
+}
+
+.col-3 {
+    padding: 0 11px;
+}
