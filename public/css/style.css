@@ -118,12 +118,6 @@ body {
     margin-bottom: 70px;
 }
 
-.about-bottom {}
-
-.row {}
-
-.about-item {}
-
 .about-item__icon {
     margin-bottom: 40px;
 }
@@ -141,4 +135,72 @@ body {
 
 .col-3 {
     padding: 0 11px;
+}
+
+.footer {
+    background-color: #2d314e;
+    padding: 45px 0;
+}
+
+.footer__links-row {
+    display: flex;
+    min-width: 290px;
+    justify-content: space-between;
+}
+
+.footer__links-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer__link {
+    color: hsl(0, 0%, 98%);
+    font-size: 0.9rem;
+}
+
+.footer__link:hover {
+    color: #4dae9a;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left {
+    display: flex;
+}
+
+.footer-left__logo {
+    margin-bottom: 45px;
+}
+
+.footer-left__icons {
+    display: flex;
+}
+
+.footer-left__inner {
+    margin-right: 120px;
+}
+
+.footer-left__icon {
+    margin-right: 12px;
+}
+
+.footer-left__icon:hover svg path {
+    fill: #33c88e;
+    cursor: pointer;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right-btn {
+    margin-bottom: 30px;
+}
+
+.footer-right__rights {
+    font-size: 0.9rem;
 }
