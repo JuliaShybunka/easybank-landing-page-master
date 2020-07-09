@@ -82,6 +82,21 @@ app.post('/createArticle', function(req, res) {
     res.redirect('/');
 });
 
+app.get('/articles/:articleId', function(req, res) {
+    let articleId = req.params.articleId;
+    Article.findById(articleId, function(err, article) {
+        console.log(article)
+        if (!err) {
+            res.render('articles', { article: article })
+        }
+    })
+
+});
+
+// app.get('/articles', function(req, res) {
+//     res.render('articles')
+// })
+
 
 app.listen(3000, function() {
     console.log("Server is running on port 3000")

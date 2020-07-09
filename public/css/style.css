@@ -264,3 +264,19 @@ body {
 .article-form {
     margin-top: 100px;
 }
+
+.article h1 {
+    padding-top: 10%;
+    text-align: center;
+    font-size: 4rem;
+    color: #2d314e;
+}
+
+.article h5 {
+    text-align: right;
+    margin-bottom: 5%;
+}
+
+.article article {
+    color: #2d314e;
+}
