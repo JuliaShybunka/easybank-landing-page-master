@@ -25,34 +25,47 @@ let article = new Article({
 
 })
 
-let articles = [{
+let defaultArticles = [{
         title: "Receive money in any currency with no fees",
         suptitle: "By Claire Robinson",
-        text: "The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …",
+        text: "The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single",
         image: "currency"
     },
     {
-        title: "Receive money in any currency with no fees",
-        suptitle: "By Claire Robinson",
-        text: "The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …",
+        title: "Treat yourself without worrying about money",
+        suptitle: "By Wilson Hutton",
+        text: "Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you",
         image: "restaurant"
     },
     {
-        title: "Receive money in any currency with no fees",
-        suptitle: "By Claire Robinson",
-        text: "The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …",
+        title: "Take your Easybank card wherever you go",
+        suptitle: "By Wilson Hutton",
+        text: "We want you to enjoy your travels. This is why we don\'t charge any fees on purchases while you\' re abroad.We\'ll even show you",
         image: "plane"
     },
     {
-        title: "Receive money in any currency with no fees",
+        title: "Our invite-only Beta accounts are now live!",
         suptitle: "By Claire Robinson",
-        text: "The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …",
-        image: "plane"
+        text: "After a lot of hard work by the whole team, we’re excited to launch our closed beta. It’s easy to request an invite through the site",
+        image: "confetti"
     }
 ]
 
 app.get('/', function(req, res) {
-    res.render('index', { articles: articles })
+    Article.find({}, function(err, articles) {
+        if (articles.length === 0) {
+            Article.insertMany(defaultArticles, function(err) {
+                if (!err) {
+                    console.log("Succesfully inserted default articles");
+                    res.redirect('/')
+                } else {
+                    console.log(err);
+                }
+            })
+        } else {
+            res.render('index', { articles: articles })
+        }
+    })
 })
 
 app.get('/createArticle', function(req, res) {
