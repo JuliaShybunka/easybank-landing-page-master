@@ -9,6 +9,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
+
 mongoose.connect('mongodb://localhost:27017/easyBankArticleDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const articleSchema = new mongoose.Schema({
@@ -56,7 +57,17 @@ app.get('/', function(req, res) {
 
 app.get('/createArticle', function(req, res) {
     res.render('createArticle')
-})
+});
+
+app.post('/createArticle', function(req, res) {
+    let article = new Article({
+        title: req.body.articleTitle,
+        suptitle: req.body.articleSuptitle,
+        text: req.body.articleText
+    });
+    article.save();
+    res.redirect('/');
+});
 
 
 app.listen(3000, function() {
