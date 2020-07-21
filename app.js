@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 
-mongoose.connect('mongodb://localhost:27017/easyBankArticleDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Julia:Ueg5697vkDvVJMG@cluster0-psqgy.mongodb.net/easyBankArticleDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const articleSchema = new mongoose.Schema({
     title: String,
